@@ -1,0 +1,7 @@
+history
+*.errors
+*.hi
+*.o
+*-linux
+*.swp
+
