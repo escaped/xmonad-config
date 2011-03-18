@@ -2,6 +2,10 @@ module Tools
 
 where
 
+import XMonad
+import qualified Data.Map as M
+import qualified XMonad.Actions.Search as S
+
 --Search engines to be selected :  
 -- [google (g), wikipedia (w) , youtube (y) , maps (m), dictionary (d) , wikipedia (w), bbs (b) ,aur (r), wiki (a) ]
 --keybinding: hit mod + s + <searchengine>
