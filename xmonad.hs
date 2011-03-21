@@ -84,9 +84,12 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask , xK_q ), restart "xmonad" True)
 
     -- rotate screen
-    , ((modMask , xK_a ), spawn "xrandr --output LVDS1 --rotate left" )
-    , ((modMask	, xK_s ), spawn "xrandr --output LVDS1 --rotate normal" )
-    , ((modMask	, xK_d ), spawn "xrandr --output LVDS1 --rotate right" )
+    , ((modMask	, xK_r ), SM.submap . M.fromList $
+        [ ((0, xK_l), spawn "xrandr --output LVDS1 --rotate left" )
+        , ((0, xK_n), spawn "xrandr --output LVDS1 --rotate normal" )
+        , ((0, xK_r), spawn "xrandr --output LVDS1 --rotate right")
+        ] 
+      )
 
     -- launcher
     , ((modMask , xK_p), shellPrompt myXPConfig)
