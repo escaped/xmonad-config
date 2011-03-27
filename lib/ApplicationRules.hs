@@ -30,6 +30,6 @@ codeApps = ["Eclipse"]
 imApps = ["Pidgin"]
 pdfApps = ["Evince", "Epdfview"]
 docApps = ["libreoffice-startcenter"]
-stuffApps = ["VirtualBox", "MPlayer", "Remmina", "Vncviewer"] 
+stuffApps = ["JDownloader", "VirtualBox", "MPlayer", "Remmina", "Vncviewer"] 
 
 centerApps = ["Xmessage", "Zenity", "feh"]

@@ -92,11 +92,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
       )
 
     -- launcher
-    , ((modMask , xK_p), shellPrompt myXPConfig)
+    , ((modMask , xK_space), shellPrompt myXPConfig)
     , ((modMask , xK_s ), SM.submap $ Tools.searchEngineMap $ S.promptSearchBrowser myXPConfig "Google-chrome")
 
     -- layout
-    , ((modMask, xK_space ), sendMessage NextLayout)
+    , ((modMask, xK_n ), sendMessage NextLayout)
 
     --focus
     , ((modMask, xK_Tab ), windows W.focusDown)
