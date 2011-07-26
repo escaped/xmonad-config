@@ -4,13 +4,13 @@ Config { font = "-*-terminus-*-*-*-*-12-*-*-*-*-*-*-u"
        , position =  TopW L 92
        , lowerOnStart = True
        , commands = [ Run StdinReader
-                    , Run BatteryP ["BAT0"] ["-t","<left>","-L","10","-H","45","-l","red","-n","orange","-h","green"] 20
-                    , Run Cpu ["cpu0","-L","5","-H","50","-l","green","--normal","orange","--high","red"] 10
-                    , Run CpuFreq ["-t","<cpu0>/<cpu1> GHz","-L","1","-H","2","-l","green","-n","orange","-h","red"] 20
-                    , Run Memory ["-t","Mem: <usedratio>%","-l","green","--normal","orange","--high","red"] 10
-                    , Run Network "eth0" ["-L","0","-H","32","-l","green","--normal","orange","--high","red"] 10
-                    , Run Network "wlan0" ["-L","0","-H","32","-l","green","--normal","orange","--high","red"] 10
-                    , Run Date "%d.%m.%Y %H:%M:%S" "date" 10
+                    , Run BatteryP ["BAT0"] ["-t","<left>%","-L","10","-H","45","-l","red","-n","orange","-h","green"] 20
+                    , Run Cpu ["cpu0","-L","5","-H","50","-l","green","--normal","orange","--high","red"] 50
+                    , Run CpuFreq ["-t","<cpu0>/<cpu1> GHz","-L","1","-H","2","-l","green","-n","orange","-h","red"] 101010101010101010100
+                    , Run Memory ["-t","Mem: <usedratio>%","-l","green","--normal","orange","--high","red"] 300
+                    , Run Network "eth0" ["-L","0","-H","32","-l","green","--normal","orange","--high","red"] 50
+                    , Run Network "wlan0" ["-L","0","-H","32","-l","green","--normal","orange","--high","red"] 50
+                    , Run Date "%d.%m.%Y %H:%M" "date" 600
                     ]
        , sepChar = "%"
        , alignSep = "}{"

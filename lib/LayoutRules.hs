@@ -22,6 +22,7 @@ layoutRules =
 	onWorkspace "1:web" webLayout $
 	onWorkspace "4:chat" imLayout $
 	onWorkspace "5:doc" tabbedLayout $
+	onWorkspace "6:stuff" gimpLayout $
 	standardLayouts
 	where
 	
@@ -40,11 +41,14 @@ layoutRules =
 
 	-- web Layout
 	webLayout = avoidStruts $  tabLayout  ||| tiled ||| reflectHoriz tiled |||  full
-        -- pdf
-        tabbedLayout = avoidStruts $ tabLayout ||| tiled ||| full 
+    -- pdf
+	tabbedLayout = avoidStruts $ tabLayout ||| tiled ||| full 
 
 	-- Gimp Layout
-	-- gimpLayout = avoidStruts $ smartBorders $ withIM(0.11) (Role "gimp-toolbox") $ reflectHoriz $ withIM (0.15) (Role "gimp-dock") Full
+	gimpLayout = withIM (0.11) (Role "gimp-toolbox") $
+				 reflectHoriz $
+				 withIM (0.15) (Role "gimp-dock") Full
+
 	-- full
 	fullL = avoidStruts $ full	
 

@@ -91,6 +91,18 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
         ] 
       )
 
+	-- multimedia keys
+	-- XF86AudioLowerVolume
+	, ((0, 0x1008ff11), spawn "amixer -q set Master 2dB-")
+	-- XF86AudioRaiseVolume
+	, ((0, 0x1008ff13), spawn "amixer -q set Master 2dB+")
+	-- XF86AudioMute
+	, ((0, 0x1008ff12), spawn "amixer -q set Master toggle")
+
+	-- screenshot
+	, ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s -e 'mv $f ~/images/screenshots/'")
+	, ((0, xK_Print), spawn "scrot -e 'mv $f ~/images/screenshots/'")
+
     -- launcher
     , ((modMask , xK_space), shellPrompt myXPConfig)
     , ((modMask , xK_s ), SM.submap $ Tools.searchEngineMap $ S.promptSearchBrowser myXPConfig "Google-chrome")
