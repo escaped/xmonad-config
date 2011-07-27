@@ -13,7 +13,6 @@ import XMonad.Layout.IM
 import XMonad.Layout.Tabbed
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Grid
--- import XMonad.Layout.Magnifier
 
 -- Data.Ratio for IM layout
 import Data.Ratio ((%))
@@ -21,8 +20,9 @@ import Data.Ratio ((%))
 
 layoutRules = 
 	onWorkspace "1:web" webLayout $
-	onWorkspace "3:chat" imLayout $
-	onWorkspace "4:pdf" tabbedLayout $
+	onWorkspace "4:chat" imLayout $
+	onWorkspace "5:doc" tabbedLayout $
+	onWorkspace "6:stuff" gimpLayout $
 	standardLayouts
 	where
 	
@@ -41,18 +41,14 @@ layoutRules =
 
 	-- web Layout
 	webLayout = avoidStruts $  tabLayout  ||| tiled ||| reflectHoriz tiled |||  full
-        -- pdf
-        tabbedLayout = avoidStruts $ tabLayout ||| tiled ||| full 
-	-- webLayout = magnifiercz' 1.4 $ Tall nmaster delta ratio where
-		-- The default number of windows in the master pane
-		-- nmaster = 1
-		-- Percent of screen to increment by when resizing p    anes
-		-- delta   = 3/100
-		-- Default proportion of screen occupied by master p    ane
-		-- ratio   = 60/100
+    -- pdf
+	tabbedLayout = avoidStruts $ tabLayout ||| tiled ||| full 
 
 	-- Gimp Layout
-	-- gimpLayout = avoidStruts $ smartBorders $ withIM(0.11) (Role "gimp-toolbox") $ reflectHoriz $ withIM (0.15) (Role "gimp-dock") Full
+	gimpLayout = withIM (0.11) (Role "gimp-toolbox") $
+				 reflectHoriz $
+				 withIM (0.15) (Role "gimp-dock") Full
+
 	-- full
 	fullL = avoidStruts $ full	
 

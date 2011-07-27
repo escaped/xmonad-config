@@ -25,11 +25,11 @@ rules = [
         ]
 
 -- applications
-webApps = ["Google-chrome", "Chromium-browser"]
+webApps = ["firefox", "Google-chrome", "Chromium-browser"]
 codeApps = ["Eclipse"]
 imApps = ["Pidgin"]
 pdfApps = ["Evince", "Epdfview"]
-docApps = ["libreoffice-startcenter"]
-stuffApps = ["JDownloader", "VirtualBox", "MPlayer", "Remmina", "Vncviewer"] 
+docApps = ["texmaker", "libreoffice-startcenter"]
+stuffApps = ["vlc", "Vncviewer"] 
 
-centerApps = ["Xmessage", "Zenity", "feh"]
+centerApps = ["nm-applet", "Xmessage", "Zenity", "feh"]
